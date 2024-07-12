@@ -61,16 +61,18 @@ const container = document.getElementById('container')
 
 //effettuo un ciclo forEach per iterare gli oggetti dell'array
 posts.forEach((element) => {
-
+    //destrutturazione
+    const { id, content, media, author, likes, created } = element;
+    const { name, image } = author;
     //creo un div che andrò a inserire all'interno del contenitore
     container.innerHTML += `<div class="post">
     <div class="post__header">
     <div class="post-meta">
         <div class="post-meta__icon">
-            <img class="profile-pic" src="${element.author.image}" alt="${element.author.name}">
+            <img class="profile-pic" src="${image}" alt="${name}">
         </div>
         <div class="post-meta__data">
-            <div class="post-meta__author">${element.author.name}</div>
+            <div class="post-meta__author">${name}</div>
             <div class="post-meta__time">4 mesi fa</div>
         </div>
     </div>
@@ -78,7 +80,7 @@ posts.forEach((element) => {
 <div class="post__text">Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad
     ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.</div>
 <div class="post__image">
-    <img src="${element.media}" alt="">
+    <img src="${media}" alt="">
 </div>
 <div class="post__footer">
     <div class="likes js-likes">
