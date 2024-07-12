@@ -104,5 +104,8 @@ posts.forEach((element) => {
 const likeBtn = document.querySelectorAll(".js-like-button")
 
 //recupero il contatore dei like
-
 const counterLike = document.querySelectorAll(".js-like-counter")
+
+//creo un array vuoto
+let array = [];
+
