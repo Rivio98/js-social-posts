@@ -91,7 +91,7 @@ posts.forEach((element) => {
             </a>
         </div>
         <div class="likes__counter">
-            Piace a <b id="like-counter-${id}" class="js-likes-counter">80</b> persone
+            Piace a <b id="like-counter-${id}" class="js-likes-counter">${likes}</b> persone
         </div>
     </div>
 </div>
@@ -100,12 +100,30 @@ posts.forEach((element) => {
 
 });
 
-//recuperiamo il tasto dei like dal dom
-const likeBtn = document.querySelectorAll(".js-like-button")
 
-//recupero il contatore dei like
-const counterLike = document.querySelectorAll(".js-like-counter")
+let likedPosts = [];
 
-//creo un array vuoto
-let array = [];
+
+const likeButtons = document.querySelectorAll('.js-like-button');
+likeButtons.forEach(button => {//Seleziona tutti i pulsanti "Mi Piace".
+    button.addEventListener('click', function (event) {//Aggiunge un event listener a ciascun pulsante per gestire i clic.
+
+        const postId = this.getAttribute('data-postid');
+        const likeCounter = document.getElementById(`like-counter-${postId}`);//Recupera l'ID del post e il contatore dei "Mi Piace" associato.
+        let currentLikes = parseInt(likeCounter.innerText);
+
+        if (!likedPosts.includes(postId)) {//Aggiorna l'array likedPosts e il contatore dei "Mi Piace"
+            likedPosts.push(postId);
+            currentLikes++;
+            this.classList.add('like-button--liked');
+        } else {
+
+        }
+
+        likeCounter.innerText = currentLikes;
+        console.log(likedPosts)
+    });
+});
+
+
 
