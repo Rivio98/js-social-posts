@@ -56,4 +56,7 @@ const posts = [
     }
 ];
 
+//dal Dom recupero il contenitore dove andrò a immettere la struttura tramite java-script
+const container = document.getElementById('container')
+
 
