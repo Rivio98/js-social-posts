@@ -117,7 +117,9 @@ likeButtons.forEach(button => {//Seleziona tutti i pulsanti "Mi Piace".
             currentLikes++;
             this.classList.add('like-button--liked');
         } else {
-
+            likedPosts = likedPosts.filter(id => id !== postId);
+            currentLikes--;
+            this.classList.remove('like-button--liked');
         }
 
         likeCounter.innerText = currentLikes;
