@@ -85,13 +85,13 @@ posts.forEach((element) => {
 <div class="post__footer">
     <div class="likes js-likes">
         <div class="likes__cta">
-            <a class="like-button  js-like-button" href="#" data-postid="${}">
+            <a class="like-button  js-like-button" href="#" data-postid="${id}">
                 <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
                 <span class="like-button__label">Mi Piace</span>
             </a>
         </div>
         <div class="likes__counter">
-            Piace a <b id="like-counter-1" class="js-likes-counter">80</b> persone
+            Piace a <b id="like-counter-${id}" class="js-likes-counter">80</b> persone
         </div>
     </div>
 </div>
@@ -99,3 +99,7 @@ posts.forEach((element) => {
 </div>`
 
 });
+
+//recuperiamo il tasto dei like dal dom
+const likeBtn = document.querySelectorAll("like-button")
+
