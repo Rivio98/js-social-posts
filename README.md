@@ -27,3 +27,14 @@ Buon lavoro! (modificato)
 
 2 vado a immettere dove ho recuperato la struttura creata tramite forEach
 
+(Milestone 2)
+
+1 recuperiamo il tasto dei like dal dom
+
+2 creo l'array vuoto dopo andrò ad aggiungere gli id dei post
+
+3 creo un evento click per il like
+-con l'evento deve diventare verde il bottone ed il counter dei like deve aumentare
+
+4 dopo in base al like pusha dentro l'array vuoto l'id del post
+
