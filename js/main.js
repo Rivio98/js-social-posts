@@ -101,5 +101,8 @@ posts.forEach((element) => {
 });
 
 //recuperiamo il tasto dei like dal dom
-const likeBtn = document.querySelectorAll("like-button")
+const likeBtn = document.querySelectorAll(".js-like-button")
 
+//recupero il contatore dei like
+
+const counterLike = document.querySelectorAll(".js-like-counter")
